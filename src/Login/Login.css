@@ -1,0 +1,87 @@
+.heading1{
+    font-family: 'SF Pro Text';
+    font-style: normal;
+    font-weight: 700;
+    line-height: 130%;
+    text-align: center;
+    color: #43225B;
+    font-size: 26px;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    margin: 20px 0px;
+    
+    }
+    .main-div {
+      margin: 0;
+      position: absolute;
+      top: 45%;
+      left: 50%;
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      
+    }
+    .btn1{
+      background-color: linear-gradient(180deg, #6CB3FA 0%, #067DFF 100%);
+    }
+    .btn3{
+      color: #757575;
+    }
+    .button-container{
+      margin-top: 50px;
+    }
+    .img-container
+    {
+      text-align:center;
+      margin: auto ;
+      width: 50%;
+    }
+    .img-container img{
+      margin-top: 30px;
+    }
+    .heading-container{
+      margin-top: 30px;;
+    }
+    p {
+        margin-top: 30px;
+        width: 100%; 
+        text-align: center; 
+        border-bottom: 1px solid #D9D3DE; 
+        line-height: 0.1em;
+        margin: 10px 0 20px; 
+     } 
+     
+     p span { 
+        margin-top: 30px;
+         background:#fff; 
+         padding:0 10px;                
+         color: #7B648C;
+         font-size: 12px;
+     }
+     .buttonClass{
+         display: flex !important;
+     }
+     @media only screen and (min-width: 768px) {
+        
+        .buttonClass {
+          display: flex !important;
+        }
+      }
+      .Buttons{
+    font-family: 'SF Pro Text';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    padding: 10px;
+      }
+      .Icons{
+        padding-right: 10px;
+      }
+      .p-container{
+        margin-top: 30px;
+      }
+      .p-container1{
+        margin-top: 30px;
+        margin-bottom: 30px;
+      }

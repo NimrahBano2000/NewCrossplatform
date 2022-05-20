@@ -56,7 +56,7 @@ app.on('window-all-closed', () => {
   const Func = (evt,data) =>{
     const val = data;
     var spawn = require('child_process').spawn,
-    ls = spawn('sh', ['/home/gaditek/Desktop/ElectronApp/my-app/public/yourname.sh'])
+    ls = spawn('sh', ['public/yourname.sh'])
     
     ls.stdout.on('data',function (data){
       fullname = data.toString();

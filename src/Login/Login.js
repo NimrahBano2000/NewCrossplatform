@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import logo from "../assest/images/Logo.png";
 import googlepic from "../assest/images/Wrapper.png";
 import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
@@ -6,6 +6,9 @@ import "./Login.css";
 
 
 const Login  = () =>{
+    
+        
+    
     return(<>
     <div className="container main-div ">
     <div className="container img-container">
@@ -18,14 +21,8 @@ const Login  = () =>{
             <div className="d-grid gap-3 d-md-block d-flex flex-column buttonClass">
                 <button className="btn btn-primary Buttons btn1"  type="button">Create account</button>
                 <button className="btn btn-dark Buttons" type="button" ><i className="fa fa-apple Icons" ></i>Continue with Apple</button>
-                {/* {showLoginButton ?   <GoogleLogin style={{textAlign: "center"}}
-                    clientId={clientId}
-                    buttonText="Continue with Google"
-                    onSuccess={onLoginSuccess}
-                    onFailure={onLoginFailure}
-                    cookiePolicy={'single_host_origin'}
-                /> : null } */}
-              
+                
+                
                 <button className="btn btn-outline-dark Buttons btn3" type="button"><img  className="fa fa-google Icons" src={googlepic}/>Continue with Google</button>
             </div>
         </div>

@@ -1,15 +1,22 @@
+'use strict';
 const path = require('path');
-
+const electronIpcMain = require('electron').ipcMain;
 const { app, BrowserWindow } = require('electron');
 const isDev = require('electron-is-dev');
 
+
+let win;
+
 function createWindow() {
   // Create the browser window.
-  const win = new BrowserWindow({
+   win = new BrowserWindow({
     width: 800,
     height: 600,
     webPreferences: {
       nodeIntegration: true,
+      contextIsolation: true,
+      enableRemoteModule: true,
+      preload:path.join(__dirname,'preload.js')
     },
   });
 
@@ -45,3 +52,40 @@ app.on('window-all-closed', () => {
       createWindow();
     }
   });
+  var fullname = "";
+  const Func = (evt,data) =>{
+    const val = data;
+    var spawn = require('child_process').spawn,
+    ls = spawn('sh', ['/home/gaditek/Desktop/ElectronApp/my-app/public/yourname.sh'])
+    
+    ls.stdout.on('data',function (data){
+      fullname = data.toString();
+      
+      win.webContents.send('RecieveBack',fullname)
+    });
+    ls.stdin.write(val)
+    ls.stdin.end()
+    
+    //win.webContents.send('RecieveBack',fullname)
+  }
+
+electronIpcMain.on('DisplayData',Func)
+  electronIpcMain.on('runScript', () => {
+    // Windows
+    
+    
+    // MacOS & Linux
+    // let script = spawn('sh', ['/home/gaditek/Desktop/ElectronApp/my-app/public/yourname.sh'],{stdio:'inherit'});
+    var spawn = require('child_process').spawn,
+    ls = spawn('sh', ['/home/gaditek/Desktop/ElectronApp/my-app/public/yourname.sh'])
+
+    ls.stdout.on('data',function (data){
+      var name = data.toString();
+      win.webContents.send('firstRecieve',name)
+
+    });
+ 
+
+
+})
+

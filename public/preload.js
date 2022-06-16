@@ -7,12 +7,15 @@ const ipc = {
         'send': [
             'runScript',
             'DisplayData',
+            'stopInternet',
+            'StartInternet'
              // Channel name
         ],
         // From main to render.
         'receive': [
             'firstRecieve',
-            'RecieveBack'
+            'RecieveBack',
+            
         ],
         // From render to main and back again.
         'sendReceive': [

@@ -70,6 +70,26 @@ app.on('window-all-closed', () => {
   }
 
 electronIpcMain.on('DisplayData',Func)
+
+
+
+electronIpcMain.on('stopInternet',()=>{
+  console.log("Hello")
+  var spawn = require('child_process').spawn;
+  spawn('sh',['public/blockInternet.sh']);
+ 
+  
+  
+})
+
+electronIpcMain.on("StartInternet",()=>{
+  console.log("I am Here");
+  var spawn = require('child_process').spawn;
+  spawn('sh',['public/startInternet.sh']);
+})
+
+
+
   electronIpcMain.on('runScript', () => {
     // Windows
     
@@ -77,7 +97,7 @@ electronIpcMain.on('DisplayData',Func)
     // MacOS & Linux
     // let script = spawn('sh', ['/home/gaditek/Desktop/ElectronApp/my-app/public/yourname.sh'],{stdio:'inherit'});
     var spawn = require('child_process').spawn,
-    ls = spawn('sh', ['/home/gaditek/Desktop/ElectronApp/my-app/public/yourname.sh'])
+    ls = spawn('sh', ['public/yourname.sh'])
 
     ls.stdout.on('data',function (data){
       var name = data.toString();

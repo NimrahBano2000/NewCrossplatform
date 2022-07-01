@@ -8,7 +8,8 @@ const ipc = {
             'runScript',
             'DisplayData',
             'stopInternet',
-            'StartInternet'
+            'StartInternet',
+            'CallingGoFile'
              // Channel name
         ],
         // From main to render.
@@ -16,10 +17,11 @@ const ipc = {
             'firstRecieve',
             'RecieveBack',
             
+            
         ],
         // From render to main and back again.
         'sendReceive': [
-            
+            'OutputGoFile'
         ]
     }
 };
